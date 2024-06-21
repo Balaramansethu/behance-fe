@@ -1,0 +1,49 @@
+.image-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+  padding-top: 160px;
+  width: 100%;
+  z-index: 1; /* Ensure images are below the navbar */
+  position: relative;
+}
+
+.image-card {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-item {
+  position: relative;
+  width: 24%;
+  margin-right: 13px;
+  margin-left: auto;
+  margin-bottom: 50px;
+}
+
+.bi-hand-thumbs-up-fill {
+  padding-left: 10px;
+}
+
+.icons {
+  display: flex;
+  padding: 5px;
+  gap: 7px;
+  background-color: white;
+  border-radius: 3px 3px 0 0;
+}
+
+.author-name {
+  padding-right: 200px;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}

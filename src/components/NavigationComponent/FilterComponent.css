@@ -1,0 +1,100 @@
+.user-search-options{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+
+}
+
+.filter{
+    border-radius: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 20px;
+    font-size: 16px;
+    background-color: white;
+    font-weight: 600;
+    border: 0.5px solid #e8e8e8;
+}
+
+.filter:hover{
+background-color: #f9f9f9;
+}
+
+.search-bar-container {
+    position: relative;
+    display: inline-block;
+    /* padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 25px; */
+
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Ensure the icon doesn't block input events */
+    font-weight: 600;
+    font-size: 40px;
+  }
+  
+  .search-bar {
+    border-radius: 25px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 1080px;
+    margin-left: 10px;
+    height: 35px;
+    display: inline-block;
+    border: 0.5px solid #e8e8e8;
+    padding-left: 55px; /* Adjust padding to make space for the icon */
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  .search-bar::placeholder {
+    color: black;
+    font-weight: 600;
+  }
+
+  .sort-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .sort-text {
+    position: absolute;
+    top: -4px; /* Adjust this value to place the text correctly */
+    left: 50px;
+    background-color: white;
+    padding: 0 5px;
+    font-size: 10px;
+    font-weight: bold;
+    color: dimgray;
+    margin: 0;
+  }
+
+
+  
+  .sorting {
+    border-radius: 30px;
+    border: 0.5px solid #e8e8e8;
+    font-weight: 600;
+    font-size: 14.5px;
+    padding-left: 20px;
+    display: inline-block;
+    padding-right: 20px;
+    margin-left: 20px;
+    padding-top: 17.5px; /* Adjust this value to provide space for the text */
+    padding-bottom: 17.5px; /* Adjust this value to provide space for the text */
+  }
+  
+  .sort-container:hover  .sort-text {
+    color: #191919; /* Same hover color as sorting:hover border */
+  }
+  
