@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../NavigationComponent/NavigationComponent.css';
-import '../NavigationComponent/FilterComponent.css'
-// import bootstrapicons from bootstrapicons
+import '../NavigationComponent/FilterComponent.css';
 
-const NavigationComponent = () => {
+const NavigationComponent = ({ onSortChange }) => {
+  const [selectedSort, setSelectedSort] = useState('none');
+
+  const handleSortChange = (event) => {
+    const value = event.target.value;
+    setSelectedSort(value);
+    onSortChange(value); // Pass the selected sort option up to the parent component
+  };
+
   return (
     <div className='whole-container'>
       <div className="navigation-container">
@@ -47,13 +54,13 @@ const NavigationComponent = () => {
         </div>
       </div>
       <nav className="user-search-options">
-        <button className="filter">
+      <button className="filter">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1z"/>
 </svg>
           Filter</button>
-          <div className="search-bar-container">
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search search-icon" viewBox="0 0 16 16">
+        <div className="search-bar-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search search-icon" viewBox="0 0 16 16">
     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
   </svg>
   <input
@@ -61,19 +68,17 @@ const NavigationComponent = () => {
     type="text"
     placeholder="Search the creative world at work"
   />
-</div>
-
-<div className="sort-container">
-  <p className='sort-text'>Sort</p>
-  <div className="recommended-button">
-    <select name="sort" className="sorting">
-      <option value="none">Recommended</option>
-      <option value="likes">Most viewed</option>
-      <option value="views">Most Recent</option>
-    </select>
-  </div>
-</div>
-
+        </div>
+        <div className="sort-container">
+          <p className='sort-text'>Sort</p>
+          <div className="recommended-button">
+            <select name="sort" className="sorting" value={selectedSort} onChange={handleSortChange}>
+              <option value="none">Recommended</option>
+              <option value="likes">Most liked</option>
+              <option value="views">Most viewed</option>
+            </select>
+          </div>
+        </div>
       </nav>
     </div>
   );

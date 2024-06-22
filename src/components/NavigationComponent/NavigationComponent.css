@@ -74,7 +74,7 @@
 }
 
 .logo_page button:hover {
-  border-bottom: 2px solid #191919; /* Change the color on hover */
+  border-bottom: 2px solid #191919; 
 }
 
 .pro-button {
@@ -157,6 +157,6 @@
   background-color: white;
   width: 100%;
   margin-top: auto;
-  z-index: 1000; /* Ensure the navbar is on top */
+  z-index: 1000; 
   padding: 0%;
 }
