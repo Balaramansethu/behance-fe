@@ -5,8 +5,9 @@
     margin-top: 20px;
     margin-bottom: 20px;
     background-color: white;
-
+    justify-content: center;
 }
+
 
 .filter{
     border-radius: 25px;
@@ -37,7 +38,7 @@ background-color: #f9f9f9;
     left: 30px;
     top: 50%;
     transform: translateY(-50%);
-    pointer-events: none; /* Ensure the icon doesn't block input events */
+    pointer-events: none; 
     font-weight: 600;
     font-size: 40px;
   }
@@ -51,7 +52,7 @@ background-color: #f9f9f9;
     height: 35px;
     display: inline-block;
     border: 0.5px solid #e8e8e8;
-    padding-left: 55px; /* Adjust padding to make space for the icon */
+    padding-left: 55px; 
     color: black;
     font-weight: 600;
     font-size: 18px;
@@ -69,7 +70,7 @@ background-color: #f9f9f9;
   
   .sort-text {
     position: absolute;
-    top: -4px; /* Adjust this value to place the text correctly */
+    top: -4px; 
     left: 50px;
     background-color: white;
     padding: 0 5px;
@@ -90,11 +91,11 @@ background-color: #f9f9f9;
     display: inline-block;
     padding-right: 20px;
     margin-left: 20px;
-    padding-top: 17.5px; /* Adjust this value to provide space for the text */
-    padding-bottom: 17.5px; /* Adjust this value to provide space for the text */
+    padding-top: 17.5px; 
+    padding-bottom: 17.5px; 
   }
   
   .sort-container:hover  .sort-text {
-    color: #191919; /* Same hover color as sorting:hover border */
+    color: #191919;
   }
   

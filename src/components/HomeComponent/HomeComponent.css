@@ -4,30 +4,28 @@
   padding-bottom: 15px;
   padding-top: 160px;
   width: 100%;
-  /* z-index: 1000;  */
   position: absolute;
 }
+
 
 .image-card {
   display: flex;
   flex-direction: row;
-  padding-left: 20px;
-  margin-top: 10px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding-left: 20px;
+  margin-top: 10px;
 }
 
 .image-item {
   position: relative;
-  width: 24%;
-  margin-right: 13px;
-  margin-left: auto;
-  margin-bottom: 50px;
+  width: calc(25% - 20px);
+  margin: 10px;
 }
 
 .bi-hand-thumbs-up-fill {
-  padding-left: 10px;
+  margin-left: 10px;
 }
 
 .icons {
@@ -53,22 +51,23 @@
   opacity: 0.7;
 }
 
-.bi-eye-fill, .bi-hand-thumbs-up-fill {
+.bi-eye-fill,
+.bi-hand-thumbs-up-fill {
   color: gray;
 }
 
 .modal {
-  display: block; 
-  position: fixed; 
+  display: block;
+  position: fixed;
   padding-top: 100px;
   left: 0;
   top: 0;
   z-index: 1000;
-  width: 100%; 
+  width: 100%;
   height: 100%;
-  overflow: auto; 
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal-content {
@@ -78,7 +77,7 @@
   max-width: 700px;
 }
 
-#caption {
+.caption {
   margin: auto;
   display: block;
   width: 80%;
@@ -89,7 +88,8 @@
   height: 150px;
 }
 
-.modal-content, #caption {
+.modal-content,
+.caption {
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
   animation-name: zoom;
@@ -97,13 +97,23 @@
 }
 
 @-webkit-keyframes zoom {
-  from { -webkit-transform: scale(0); }
-  to { -webkit-transform: scale(1); }
+  from {
+    -webkit-transform: scale(0);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+  }
 }
 
 @keyframes zoom {
-  from { transform: scale(0); }
-  to { transform: scale(1); }
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
 .close {
@@ -126,5 +136,9 @@
 @media only screen and (max-width: 700px) {
   .modal-content {
     width: 100%;
+  }
+
+  .image-item {
+    width: calc(50% - 20px);
   }
 }

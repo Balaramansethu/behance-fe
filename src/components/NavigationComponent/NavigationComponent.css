@@ -1,4 +1,3 @@
-/* Navigation Container */
 .navigation-container {
   display: flex;
   justify-content: space-between;
@@ -6,22 +5,30 @@
   border-bottom: 1px solid #ddd;
   background-color: white;
   width: 100%;
-  /* padding-bottom: 0%; */
   font-size: 15px;
   font-weight: bold;
-  /* color: #191919; */
+  padding: 0 1rem;
 }
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-.bell-icon{
-  padding-left: 450px;
+.bell-icon {
+  padding-left: 1rem;
 }
 
-.bi-sliders{
+.no-data-message {
+  text-align: center;
+  color: red;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.bi-sliders {
   padding-right: 10px;
   padding-top: 2px;
   color: gray;
 }
+
 .flex {
   margin: auto;
   padding-left: 0.5rem;
@@ -29,14 +36,13 @@
   padding-bottom: 0%;
 }
 
-.navigation-elements  ul {
+.navigation-elements ul {
   display: flex;
   align-items: center;
   gap: 7px;
   margin: 0;
   position: relative;
   justify-content: center;
-  align-items: center;
 }
 
 .img {
@@ -57,9 +63,10 @@
   list-style: none;
 }
 
-.element-btn{
+.element-btn {
   padding: 25px;
 }
+
 .logo_page button {
   background: none;
   border: none;
@@ -67,14 +74,12 @@
   font-size: inherit;
   font-weight: inherit;
   cursor: pointer;
-  /* padding: 25px; */
   display: flex;
   flex-direction: column;
-  list-style: none;
 }
 
 .logo_page button:hover {
-  border-bottom: 2px solid #191919; 
+  border-bottom: 2px solid #191919;
 }
 
 .pro-button {
@@ -86,26 +91,27 @@
   border-radius: 12px;
   text-transform: uppercase;
 }
-.behance-text{
+
+.behance-text {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
   justify-content: flex-end;
   padding: 25px;
-
 }
 
-.log-in-button {
+.log-in-button, .sign-up-button {
   margin-right: 0.5rem;
-  margin-bottom: 0.75rem;
   padding: 0.5rem 1.25rem;
   border: 1px solid #ccc;
   background-color: white;
-  color: #0057ff;
   border-radius: 999px;
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
+}
+
+.log-in-button {
+  color: #0057ff;
 }
 
 .log-in-button:hover {
@@ -113,36 +119,73 @@
 }
 
 .sign-up-button {
-  margin-top: 0.75rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.75rem;
   color: white;
   background-color: #0057ff;
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: 1px solid  #0057ff;
+  border: 1px solid #0057ff;
 }
 
 .sign-up-button:hover {
   background-color: #1e3a8a;
 }
 
-/* .adobe-button {
-  display: flex;
-  align-items:start;
-  justify-content: space-between;
-} */
-
 .adobe-image {
   width: auto;
   height: 20px;
-  bottom: 50px;
-  /* margin-top: 15px; */
+  margin-top: 15px;
 }
 
+.suggestions {
+  margin-bottom: 10px;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.suggestion-item {
+  display: block;
+  padding: 10px;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  cursor: pointer;
+}
+
+.suggestion-item:first-child {
+  border-top: 1px solid #ccc;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: -32px;
+}
+.bi-bell-fill
+{
+  padding-left: 450px;
+  padding-top: 13px;
+}
 
 .adobe {
   text-decoration: none;
@@ -157,6 +200,67 @@
   background-color: white;
   width: 100%;
   margin-top: auto;
-  z-index: 1000; 
+  z-index: 1000;
   padding: 0%;
+}
+
+@media (max-width: 1200px) {
+  .bell-icon {
+    padding-left: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .bell-icon {
+    padding-left: 150px;
+  }
+  .navigation-elements ul {
+    flex-wrap: wrap;
+  }
+  .element-btn, .log-in-button, .sign-up-button, .adobe-image, .adobe {
+    font-size: 0.75rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bell-icon {
+    padding-left: 50px;
+  }
+  .navigation-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navigation-elements ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .logo_page {
+    margin: 0.5rem 0;
+  }
+  .behance-text {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    width: 75px;
+  }
+  .bell-icon {
+    padding-left: 0;
+    margin-top: 5rem;
+  }
+  .log-in-button, .sign-up-button {
+    font-size: 0.75rem;
+    padding: 0.25rem 1rem;
+  }
+  .adobe-image {
+    height: 15px;
+  }
 }

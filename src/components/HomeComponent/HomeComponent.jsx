@@ -1,38 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./HomeComponent.css";
 import images from "../../data/data.js";
 
-const HomeComponent = ({ sortOption }) => {
+const HomeComponent = ({ sortOption, searchTerm }) => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [modalImageSrc, setModalImageSrc] = useState('');
-  const [captionText, setCaptionText] = useState('');
+  const [modalImageSrc, setModalImageSrc] = useState("");
+  const [captionText, setCaptionText] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [filteredImages, setFilteredImages] = useState(images);
 
-  // Handle image click to show modal
+  useEffect(() => {
+    if (searchTerm) {
+      const filtered = images.filter((image) =>
+        image.author.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredImages(filtered);
+
+      const uniqueAuthors = [...new Set(filtered.map((image) => image.author))];
+      setSuggestions(uniqueAuthors);
+    } else {
+      setFilteredImages(images);
+      setSuggestions([]);
+    }
+  }, [searchTerm]);
+
+  useEffect(() => {
+    const sortedImages = [...filteredImages];
+    if (sortOption === "likes") {
+      sortedImages.sort((a, b) => b.likes - a.likes);
+    } else if (sortOption === "views") {
+      sortedImages.sort((a, b) => b.views - a.views);
+    }
+    setFilteredImages(sortedImages);
+  }, [sortOption]);
+
   const handleImageClick = (src, author) => {
     setModalVisible(true);
     setModalImageSrc(src);
     setCaptionText(author);
   };
 
-  // Handle closing modal
   const handleCloseModal = () => {
     setModalVisible(false);
-    setModalImageSrc('');
-    setCaptionText('');
+    setModalImageSrc("");
+    setCaptionText("");
   };
-
-  // Sorting logic
-  const sortedImages = [...images];
-  if (sortOption === 'likes') {
-    sortedImages.sort((a, b) => b.likes - a.likes);
-  } else if (sortOption === 'views') {
-    sortedImages.sort((a, b) => b.views - a.views);
-  }
 
   return (
     <div className="image-container">
       <div className="image-card">
-        {sortedImages.map((image, index) => (
+        {filteredImages.map((image, index) => (
           <div className="image-item" key={index}>
             <div className="image-header">
               <img
@@ -61,10 +78,10 @@ const HomeComponent = ({ sortOption }) => {
                   className="bi bi-eye-fill"
                   viewBox="0 0 16 16"
                 >
-                  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
-                  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8-4.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9z" />
                 </svg>
-                <span>{image.views+"k"}</span>
+                <span>{image.views+'k'}</span>
               </div>
             </div>
           </div>
@@ -73,9 +90,11 @@ const HomeComponent = ({ sortOption }) => {
 
       {modalVisible && (
         <div className="modal" onClick={handleCloseModal}>
-          <span className="close" onClick={handleCloseModal}>&times;</span>
-          <img className="modal-content" src={modalImageSrc} alt={captionText} />
-          <div id="caption">{captionText}</div>
+          <span className="close" onClick={handleCloseModal}>
+            x
+          </span>
+          <img className="modal-content" src={modalImageSrc} alt="Modal" />
+          <div className="caption">{captionText}</div>
         </div>
       )}
     </div>
