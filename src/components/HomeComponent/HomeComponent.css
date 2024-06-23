@@ -24,8 +24,12 @@
   margin: 10px;
 }
 
-.bi-hand-thumbs-up-fill {
-  margin-left: 10px;
+.bi-hand-thumbs-up-fill{
+  margin-left: auto;
+  /* width: 100%; */
+}
+.bi-eye-fill {
+padding-left: auto;
 }
 
 .icons {
@@ -33,10 +37,13 @@
   gap: 7px;
   background-color: white;
   border-radius: 3px 3px 0 0;
+  width: 100%;
+  margin-left: auto;
+  /* justify-content: space-between; */
 }
 
 .author-name {
-  padding-right: 180px;
+  padding-right: auto;
 }
 
 .image-item img {
