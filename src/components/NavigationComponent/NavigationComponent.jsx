@@ -79,7 +79,7 @@ const NavigationComponent = ({ onSortChange, onSearchChange }) => {
               <button className="behance-text">Behance </button>
             </li>
             <li className="logo_page">
-              <button className="element-btn">Hire Freelancers</button>
+              <button className="element-btn-hire">Hire Freelancers</button>
             </li>
           </ul>
         </div>
@@ -176,9 +176,9 @@ const NavigationComponent = ({ onSortChange, onSearchChange }) => {
               value={selectedSort}
               onChange={handleSortChange}
             >
-              <option value="none">Recommended</option>
-              <option value="likes">Most liked</option>
-              <option value="views">Most viewed</option>
+              <option className="sort-hover" value="none">Recommended</option>
+              <option className="sort-hover" value="likes">Most liked</option>
+              <option className="sort-hover" value="views">Most viewed</option>
             </select>
           </div>
         </div>

@@ -17,6 +17,15 @@
   padding-left: 20px;
   margin-top: 10px;
 }
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+  font-weight: bold;
+  color: #999;
+}
 
 .image-item {
   position: relative;
@@ -30,6 +39,8 @@
 }
 .bi-eye-fill {
 padding-left: auto;
+font-size: 100px;
+
 }
 
 .icons {
@@ -39,11 +50,26 @@ padding-left: auto;
   border-radius: 3px 3px 0 0;
   width: 100%;
   margin-left: auto;
-  /* justify-content: space-between; */
+  margin-top: 5px;
+  justify-content: baseline;
+}
+
+.picture-name {
+  color: gray;
+  font-size: 13px;
+  /* font-weight:bold; */
+}
+.likes-font, .views-font{
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 2px;
+  color: rgb(58, 54, 54);
 }
 
 .author-name {
   padding-right: auto;
+  font-weight: 600;
+  font-weight: bold;
 }
 
 .image-item img {

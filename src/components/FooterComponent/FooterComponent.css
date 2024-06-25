@@ -1,0 +1,46 @@
+/* Main footer container styling */
+.footer {
+    display: flex; /* Use flexbox to layout items */
+    justify-content: space-between; /* Space items evenly */
+    padding: 10px 20px; /* Padding inside the footer */
+    background-color: black; /* Background color of the footer */
+  }
+  
+  /* Styling for the Behance title */
+  .footer-title {
+    font-size: 1.25rem; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    color: white; /* Text color */
+  }
+  
+  /* Styling for section titles */
+  .footer-section-title {
+    font-size: 1rem; /* Font size */
+    margin-bottom: 10px; /* Margin below the title */
+    color: white; /* Text color */
+  }
+  
+  /* Styling for blocks of links */
+  .footer-blocks {
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  /* Remove default list styling */
+  .footer-list {
+    list-style-type: none; /* No bullet points */
+    padding: 0; /* Remove default padding */
+  }
+  
+  /* Styling for individual list items */
+  .footer-list-item {
+    margin-bottom: 5px; /* Space between list items */
+    color: white; /* Text color */
+  }
+  
+  /* Styling for the copyright section */
+  .footer-copyright {
+    background-color: black; /* Background color */
+    padding: 0 20px 10px; /* Padding inside the footer */
+    color: white; /* Text color */
+  }
+  

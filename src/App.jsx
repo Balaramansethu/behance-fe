@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavigationComponent from "./components/NavigationComponent/NavigationComponent";
 import HomeComponent from "./components/HomeComponent/HomeComponent";
+// import FooterComponent from "./components/FooterComponent/FooterComponent";
 
 const App = () => {
   const [selectedSort, setSelectedSort] = useState("none");
@@ -21,6 +22,7 @@ const App = () => {
         onSearchChange={handleSearchChange}
       />
       <HomeComponent sortOption={selectedSort} searchTerm={searchTerm} />
+      {/* <FooterComponent/> */}
     </React.Fragment>
   );
 };

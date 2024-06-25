@@ -8,12 +8,15 @@
   font-size: 15px;
   font-weight: bold;
   padding: 0 1rem;
+  padding:0%;
+  margin: 0%
 }
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 .bell-icon {
-  padding-left: 1rem;
+  padding-left: 10rem;
+  padding-bottom: 0.6rem;
 }
 
 .no-data-message {
@@ -29,11 +32,18 @@
   color: gray;
 }
 
+.element-btn-hire{
+  padding-left: 50px;
+}
+/* .element-btn{
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+} */
+
 .flex {
   margin: auto;
-  padding-left: 0.5rem;
-  padding-top: 0%;
-  padding-bottom: 0%;
+  padding: 0%;
 }
 
 .navigation-elements ul {
@@ -51,7 +61,8 @@
 
 .logo {
   width: 100px;
-  margin-right: 0.5rem;
+  /* height: 60px; */
+  /* margin-right: 0.5rem; */
 }
 
 .logo_page {
@@ -63,9 +74,11 @@
   list-style: none;
 }
 
-.element-btn {
-  padding: 25px;
+.logo_page {
+  display: flex;
+  align-items: center;
 }
+
 
 .logo_page button {
   background: none;
@@ -76,11 +89,33 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  
 }
 
-.logo_page button:hover {
-  border-bottom: 2px solid #191919;
+/* .element-btn{
+padding-bottom:-10px ;
+
 }
+.element-btn:hover{
+  text-decoration: underline black;
+  border-bottom: 2.5px solid #191919;
+
+  /* margin-bottom: 10px; */
+  /* bottom: 100px;
+} */
+/* .flex:hover{
+   border-bottom: 2.5px solid #191919; 
+}  */
+.sort-hover:hover{
+  color: #0057ff;
+}
+
+/* .logo_page button:hover {
+  border-bottom: 2.5px solid #191919;
+  padding-bottom: 40px;
+  margin-top: 0%;
+  
+} */
 
 .pro-button {
   font-size: 4px;
@@ -92,11 +127,22 @@
   text-transform: uppercase;
 }
 
+.sorting option {
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+}
+
+.sort-hover:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
 .behance-text {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 25px;
+  padding-bottom: 0%;
 }
 
 .log-in-button, .sign-up-button {
@@ -131,7 +177,7 @@
 .adobe-image {
   width: auto;
   height: 20px;
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 
 .suggestions {
@@ -193,6 +239,7 @@
   margin-right: 20px;
   padding-left: 7px;
   font-size: 13px;
+  /* margin-bottom:auto; */
 }
 
 .whole-container {
